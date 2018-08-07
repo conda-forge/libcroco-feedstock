@@ -12,10 +12,10 @@ if [ -n "$OSX_ARCH" ] ; then
     sdk=/
     export CFLAGS="$CFLAGS -isysroot $sdk"
     export LDFLAGS="$LDFLAGS -Wl,-syslibroot,$sdk -Wl,-rpath,$PREFIX/lib"
-
-    # Needed to work around busted libxml2.la file in v. 2.9.2-0:
-    rm -f $PREFIX/lib/*.la
 fi
+
+# remove any libtool files of packages we depend on:
+find $PREFIX -name '*.la' -delete
 
 ./configure "${configure_args[@]}" #|| { cat config.log ; exit 1 ; }
 make -j$NJOBS
