@@ -11,17 +11,19 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
   build:
-    - glib >=2.51
-    - libxml2 >=2.9
     - pkg-config
+    - {{ compiler('c') }}
+  host:
+    - glib
+    - libxml2
   run:
-    - glib >=2.51
-    - libxml2 >=2.9
+    - glib
+    - libxml2
 
 test:
   commands:
