@@ -1,0 +1,11 @@
+c_compiler:
+- toolchain_c
+glib:
+- '2.55'
+libxml2:
+- '2.9'
+pin_run_as_build:
+  glib:
+    max_pin: x.x
+  libxml2:
+    max_pin: x.x
