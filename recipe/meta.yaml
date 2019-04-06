@@ -1,6 +1,6 @@
-{% set version = '0.6.12' %}
+{% set version = "0.6.13" %}
 {% set version_major = version.rsplit('.', 1)[0] %}
-{% set sha256 = "ddc4b5546c9fb4280a5017e2707fbd4839034ed1aba5b7d4372212f34f84f860" %}
+{% set sha256 = "767ec234ae7aa684695b3a735548224888132e063f92db585759b422570621d4" %}
 
 package:
   name: libcroco
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1002
+  number: 0
   skip: true  # [win]
 
 requirements:
