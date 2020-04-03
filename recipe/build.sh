@@ -17,7 +17,7 @@ fi
 # remove any libtool files of packages we depend on:
 find $PREFIX -name '*.la' -delete
 
-./configure "${configure_args[@]}" #|| { cat config.log ; exit 1 ; }
+./configure "${configure_args[@]}" || { cat config.log ; exit 1 ; }
 make -j$NJOBS
 make install
 
