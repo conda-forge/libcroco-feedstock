@@ -1,5 +1,7 @@
 #! /bin/bash
 
+set -ex
+
 export PKG_CONFIG_LIBDIR="$PREFIX/lib/pkgconfig:$PREFIX/share/pkgconfig"
 
 configure_args=(
@@ -8,10 +10,7 @@ configure_args=(
 )
 
 if [ -n "$OSX_ARCH" ] ; then
-    # rpath setting is often needed to run compiled autoconf test programs:
-    sdk=/
-    export CFLAGS="$CFLAGS -isysroot $sdk"
-    export LDFLAGS="$LDFLAGS -Wl,-syslibroot,$sdk -Wl,-rpath,$PREFIX/lib"
+    export LDFLAGS="$LDFLAGS -Wl,-rpath,$PREFIX/lib"
 fi
 
 # remove any libtool files of packages we depend on:
