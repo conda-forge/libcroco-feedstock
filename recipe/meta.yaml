@@ -11,13 +11,13 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
 
 requirements:
   build:
-    - make
-    - pkg-config
+    - make  # [unix]
+    - pkg-config  # [unix]
+    - python  # [win]
     - {{ compiler('c') }}
   host:
     - glib
@@ -27,8 +27,28 @@ requirements:
     - libxml2
 
 test:
+  requires:
+    - pkg-config
   commands:
-    - test -f $PREFIX/lib/libcroco-{{ version_major }}$SHLIB_EXT
+    {% set name = "libcroco" %}
+    {% set libname = "croco-" + version_major %}
+    # test that headers get installed
+    - test -f $PREFIX/include/lib{{ libname }}/{{ name }}/{{ name }}.h  # [unix]
+    - if not exist %PREFIX%\Library\include\lib{{ libname }}\{{ name }}\{{ name }}.h exit 1  # [win]
+
+    # test that library gets installed
+    - test -f $PREFIX/lib/lib{{ libname }}$SHLIB_EXT  # [unix]
+    - if not exist %PREFIX%\Library\bin\{{ libname }}-vs{{ vc }}.dll exit 1  # [win]
+    - if not exist %PREFIX%\Library\lib\{{ libname }}.lib exit 1  # [win]
+
+    # test that pkg-config points to the correct prefix by finding library through it
+    - test -f `pkg-config --variable=libdir --dont-define-prefix lib{{ libname }}`/lib{{ libname }}$SHLIB_EXT  # [unix]
+    - for /f "usebackq tokens=*" %%a in (`pkg-config --variable=libdir --dont-define-prefix lib{{ libname }}`) do if not exist "%%a/{{ libname }}.lib" exit 1  # [win]
+
+    # test binaries
+    - csslint-{{ version_major }} -v  # [unix]
+    - csslint -v  # [win]
+
     - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
     - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
