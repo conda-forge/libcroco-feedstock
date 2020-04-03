@@ -3,7 +3,7 @@ About libcroco
 
 Home: http://www.linuxfromscratch.org/blfs/view/svn/general/libcroco.html
 
-Package license: LGPL
+Package license: LGPL-2.1-only
 
 Feedstock license: BSD 3-Clause
 
