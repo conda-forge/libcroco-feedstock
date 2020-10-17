@@ -37,7 +37,7 @@ test:
 
     # test that library gets installed
     - test -f $PREFIX/lib/lib{{ libname }}$SHLIB_EXT  # [unix]
-    - if not exist %PREFIX%\Library\bin\{{ libname }}-vs%VS_MAJOR%.dll exit 1  # [win]
+    - if not exist %PREFIX%\Library\bin\{{ libname }}-vs15.dll exit 1  # [win]
     - if not exist %PREFIX%\Library\lib\{{ libname }}.lib exit 1  # [win]
 
     # test that pkg-config points to the correct prefix by finding library through it
