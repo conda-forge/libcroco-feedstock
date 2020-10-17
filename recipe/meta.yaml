@@ -23,7 +23,6 @@ requirements:
     - glib
     - libxml2
   run:
-    - glib
     - libxml2
 
 test:
