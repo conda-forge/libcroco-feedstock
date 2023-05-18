@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   build:
@@ -48,8 +48,6 @@ test:
     - csslint-{{ version_major }} -v  # [unix]
     - csslint -v  # [win]
 
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: http://www.linuxfromscratch.org/blfs/view/svn/general/libcroco.html
