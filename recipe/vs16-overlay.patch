@@ -1,0 +1,122 @@
+diff --git a/win32/vs10/croco-build-defines.props b/win32/vs10/croco-build-defines.props
+index c93af35..f02e467 100644
+--- a/win32/vs10/croco-build-defines.props
++++ b/win32/vs10/croco-build-defines.props
+@@ -42,6 +42,7 @@ See COPYRIGHTS file for copyright information.
+       <AdditionalOptions Condition="'$(VisualStudioVersion)|$(Platform)'=='12.0|x64'">/HIGHENTROPYVA %(AdditionalOptions)</AdditionalOptions>
+       <AdditionalOptions Condition="'$(VisualStudioVersion)|$(Platform)'=='14.0|x64'">/HIGHENTROPYVA %(AdditionalOptions)</AdditionalOptions>
+       <AdditionalOptions Condition="'$(VisualStudioVersion)|$(Platform)'=='15.0|x64'">/HIGHENTROPYVA %(AdditionalOptions)</AdditionalOptions>
++      <AdditionalOptions Condition="'$(VisualStudioVersion)|$(Platform)'=='16.0|x64'">/HIGHENTROPYVA %(AdditionalOptions)</AdditionalOptions>
+     </Link>
+   </ItemDefinitionGroup>
+ </Project>
+diff --git a/win32/vs10/croco-install.vcxproj b/win32/vs10/croco-install.vcxproj
+index 0cda335..f2e4803 100644
+--- a/win32/vs10/croco-install.vcxproj
++++ b/win32/vs10/croco-install.vcxproj
+@@ -46,23 +46,23 @@ See COPYRIGHTS file for copyright information.
+     <ConfigurationType>Utility</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+-    <PlatformToolset>v100</PlatformToolset>
++    <PlatformToolset>v142</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>Utility</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
+-    <PlatformToolset>v100</PlatformToolset>
++    <PlatformToolset>v142</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>Utility</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+-    <PlatformToolset>v100</PlatformToolset>
++    <PlatformToolset>v142</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>Utility</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
+-    <PlatformToolset>v100</PlatformToolset>
++    <PlatformToolset>v142</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+diff --git a/win32/vs10/croco.vcxproj b/win32/vs10/croco.vcxproj
+index fe273a3..a7826ba 100644
+--- a/win32/vs10/croco.vcxproj
++++ b/win32/vs10/croco.vcxproj
+@@ -43,24 +43,24 @@ See COPYRIGHTS file for copyright information.
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
+-    <PlatformToolset>v100</PlatformToolset>
++    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
+-    <PlatformToolset>v100</PlatformToolset>
++    <PlatformToolset>v142</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
+-    <PlatformToolset>v100</PlatformToolset>
++    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
+-    <PlatformToolset>v100</PlatformToolset>
++    <PlatformToolset>v142</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+diff --git a/win32/vs10/csslint.vcxproj b/win32/vs10/csslint.vcxproj
+index 452aa4a..b9be35a 100644
+--- a/win32/vs10/csslint.vcxproj
++++ b/win32/vs10/csslint.vcxproj
+@@ -47,23 +47,23 @@ See COPYRIGHTS file for copyright information.
+     <ConfigurationType>Application</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+-    <PlatformToolset>v100</PlatformToolset>
++    <PlatformToolset>v142</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
+-    <PlatformToolset>v100</PlatformToolset>
++    <PlatformToolset>v142</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+-    <PlatformToolset>v100</PlatformToolset>
++    <PlatformToolset>v142</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
+-    <PlatformToolset>v100</PlatformToolset>
++    <PlatformToolset>v142</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+diff --git a/win32/vs10/croco-version-paths.props b/win32/vs10/croco-version-paths.props
+index f8c2772..ffebbbc 100644
+--- a/win32/vs10/croco-version-paths.props
++++ b/win32/vs10/croco-version-paths.props
+@@ -24,7 +24,7 @@ See COPYRIGHTS file for copyright information.
+     <CrocoMinorVersion>6</CrocoMinorVersion>
+     <CrocoMicroVersion>12</CrocoMicroVersion>
+     <ApiVersion>$(CrocoMajorVersion).$(CrocoMinorVersion)</ApiVersion>
+-    <VSVer>10</VSVer>
++    <VSVer>16</VSVer>
+     <GlibEtcInstallRoot>$(SolutionDir)\..\..\..\vs$(VSVer)\$(Platform)</GlibEtcInstallRoot>
+     <CopyDir>$(GlibEtcInstallRoot)</CopyDir>
+     <DefDir>$(SolutionDir)$(Configuration)\$(PlatformName)\obj\$(ProjectName)\</DefDir>
