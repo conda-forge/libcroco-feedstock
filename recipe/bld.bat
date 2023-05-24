@@ -14,6 +14,13 @@ if "%VS_YEAR%" == "2015" (
 if "%VS_YEAR%" == "2017" (
   set "SLN_FILE=win32\vs15\libcroco.sln"
 )
+if "%VS_YEAR%" == "2019" (
+  :: Our source tarball doesn't have a `vs16` directory, but we patch the `vs10` tree
+  :: to look like how it should look. That "should" is derived from Inkscape's
+  :: semi-maintained version of libcroco, https://gitlab.com/inkscape/libcroco/,
+  :: which has a vs16 tree but doesn't have any releases or tags.
+  set "SLN_FILE=win32\vs10\libcroco.sln"
+)
 
 set "MSBUILD_CMD=%VSINSTALLDIR%MSBuild\%VS_VERSION%\Bin\MSBuild.exe"
 if not exist "%MSBUILD_CMD%" (

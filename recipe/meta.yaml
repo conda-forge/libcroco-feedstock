@@ -9,6 +9,8 @@ package:
 source:
   url: https://download.gnome.org/sources/libcroco/{{ version_major }}/libcroco-{{ version }}.tar.xz
   sha256: {{ sha256 }}
+  patches:
+    - vs16-overlay.patch  # [win]
 
 build:
   number: 3
