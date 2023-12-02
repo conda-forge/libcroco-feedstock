@@ -7,6 +7,6 @@ channel_targets:
 glib:
 - '2'
 libxml2:
-- '2.11'
+- '2.12'
 target_platform:
 - win-64
