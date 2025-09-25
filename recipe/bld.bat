@@ -21,6 +21,9 @@ if "%VS_YEAR%" == "2019" (
   :: which has a vs16 tree but doesn't have any releases or tags.
   set "SLN_FILE=win32\vs10\libcroco.sln"
 )
+if "%VS_YEAR%" == "2022" (
+  set "SLN_FILE=win32\vs10\libcroco.sln"
+)
 
 set "MSBUILD_CMD=%VSINSTALLDIR%MSBuild\%VS_VERSION%\Bin\MSBuild.exe"
 if not exist "%MSBUILD_CMD%" (

@@ -14,7 +14,7 @@ source:
     - vs16-overlay.patch  # [win]
 
 build:
-  number: 4
+  number: 5
 
 requirements:
   build:
@@ -22,11 +22,10 @@ requirements:
     - pkg-config  # [unix]
     - python  # [win]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - glib
-    - libxml2
-  run:
-    - libxml2
+    - libxml2-devel
 
 test:
   requires:
