@@ -26,8 +26,6 @@ requirements:
   host:
     - glib
     - libxml2-devel
-  run:
-    - libxml2-devel
 
 test:
   requires:
